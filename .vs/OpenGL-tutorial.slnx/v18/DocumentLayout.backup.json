@@ -1,9 +1,9 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Documents\\OpenGL-tutorial - Copy\\",
+  "WorkspaceRootPath": "D:\\Documents\\OpenGL-tutorial\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{98A6F179-27CF-4177-B281-24E361917D4C}|OpenGL-tutorial.vcxproj|D:\\Documents\\OpenGL-tutorial - Copy\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "AbsoluteMoniker": "D:0:0:{98A6F179-27CF-4177-B281-24E361917D4C}|OpenGL-tutorial.vcxproj|D:\\Documents\\OpenGL-tutorial\\main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{98A6F179-27CF-4177-B281-24E361917D4C}|OpenGL-tutorial.vcxproj|solutionrelative:main.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
@@ -20,11 +20,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "main.cpp",
-              "DocumentMoniker": "D:\\Documents\\OpenGL-tutorial - Copy\\main.cpp",
+              "DocumentMoniker": "D:\\Documents\\OpenGL-tutorial\\main.cpp",
               "RelativeDocumentMoniker": "main.cpp",
-              "ToolTip": "D:\\Documents\\OpenGL-tutorial - Copy\\main.cpp",
-              "RelativeToolTip": "main.cpp",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAACcAAAAdAAAAAAAAAA==",
+              "ToolTip": "D:\\Documents\\OpenGL-tutorial\\main.cpp*",
+              "RelativeToolTip": "main.cpp*",
+              "ViewState": "AgIAAF8AAAAAAAAAAAAgwHcAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2026-01-02T16:01:45.339Z",
               "EditorCaption": ""
