@@ -12,11 +12,13 @@ const char* vertexShaderSource =
 "layout (location = 1) in vec3 aColor;\n"
 "out vec4 vertexColor;\n" // Specify color output to the fragment shader
 "out vec3 ourColor2;\n"
+ //out vec3 ourPos;\n
 "void main()\n"
 "{\n"
-"   gl_Position = vec4(aPos, 1.0);\n"
+"   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);\n"
+    //ourPos = aPos;\n
 "   vertexColor = vec4(0.5, 0.0, 0.0, 0.1);\n" // Output variable is a dark red color
-"   ourColor2 = aColor;\n"
+"   ourColor2 = vec3(aColor.x, aColor.y, aColor.z);\n"
 "}\0";
 
 const char* fragmentShaderSource =
@@ -30,11 +32,13 @@ const char* fragmentShaderSource =
 
 const char* fragmentShaderSource_yellow =
 "#version 330 core\n"
-"out vec4 FragColor;\n"
+"out vec4 FragColor2;\n"
+ //in vec3 ourPos;\n
 "in vec3 ourColor2;\n"
 "void main()\n"
 "{\n"
-"   FragColor = vec4(ourColor2, 1.0f);\n"
+    //FragColor2 = vec4(ourPos, 1.0f);\n
+"   FragColor2 = ourColor2;\n"
 "}\0";
 
 int main()
@@ -85,8 +89,7 @@ int main()
         0, 1, 3,     // first triangle
         1, 2, 3      // second triangle
     };
-
-    
+ 
     /*float vertices_2_triangles[] = {
      -0.2f, -0.2f, 0.0f,
      0.2f, -0.2f, 0.0f,
@@ -257,7 +260,7 @@ int main()
     // Position
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-    // Color
+    // Colour
     glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3* sizeof(float)));
     glEnableVertexAttribArray(1);
    
