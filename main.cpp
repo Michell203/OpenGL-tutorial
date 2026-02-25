@@ -2,6 +2,7 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include "stb_image.h"
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
 void processInput(GLFWwindow* window);
@@ -38,7 +39,7 @@ const char* fragmentShaderSource_yellow =
 "void main()\n"
 "{\n"
     //FragColor2 = vec4(ourPos, 1.0f);\n
-"   FragColor2 = ourColor2;\n"
+"   FragColor2 = vec4(ourColor2, 1.0f);\n"
 "}\0";
 
 int main()
@@ -70,7 +71,6 @@ int main()
     glViewport(0, 0, 800, 600);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
-
     // Hello Triangle Chapter
     float vertices[] = {
      -0.5f, -0.5f, 0.0f,
@@ -157,7 +157,7 @@ int main()
     if (!success)
     {
         glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
-        std::cout << "ERROR SHADER FRAGMENT COMPILE FAILED" << infoLog << std::endl;
+        std::cout << "ERROR SHADER FRAGMENT 1 COMPILE FAILED" << infoLog << std::endl;
     }
 
     unsigned int fragmentShader_yellow;
@@ -169,7 +169,7 @@ int main()
     if (!success)
     {
         glGetShaderInfoLog(fragmentShader_yellow, 512, NULL, infoLog);
-        std::cout << "ERROR SHADER FRAGMENT COMPILE FAILED" << infoLog << std::endl;
+        std::cout << "ERROR SHADER FRAGMENT 2 COMPILE FAILED" << infoLog << std::endl;
     }
 
     // Shader progra
@@ -266,6 +266,17 @@ int main()
    
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE); // Draw as lines
+
+    // Load textures
+    int width, height, nrChannels;
+    unsigned char *data = stbi_load("Images/container.jpg", &width, &height, &nrChannels, 0);
+
+    unsigned int texture;
+    glGenTextures(1, &texture);
+    glBindTexture(GL_TEXTURE_2D, texture);
+    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+    glGenerateMipmap(GL_TEXTURE_2D);
+
 
 	// Keep window open until closed by user
     while (!glfwWindowShouldClose(window)) {
